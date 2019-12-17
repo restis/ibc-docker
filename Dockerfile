@@ -5,6 +5,8 @@ LABEL author="antmanler(AT)gmail.com"
 # install easy-novnc
 COPY --from=restis/easy-novnc:latest /easy-novnc /usr/bin/
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # config vnc, ref  https://github.com/accetto/ubuntu-vnc-xfce/tree/cb02506d13da39bd3ff17b72bec00fb57da6acd5
 RUN apt-get update && apt-get install -y \
     mousepad \
